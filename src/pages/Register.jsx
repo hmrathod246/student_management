@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom";
 import "./Register.css";
 
 function Register() {
- 
   return (
-    <>
+    
       <div className="form-container">
         <h1 className="form-title">REGISTER</h1>
         <form action="">
@@ -52,8 +52,11 @@ function Register() {
             Register
           </button>
         </form>
+        <p className="link-text">
+          Already have an account<Link to="/Login">Login</Link>
+        </p>
       </div>
-    </>
+    
   );
 }
 

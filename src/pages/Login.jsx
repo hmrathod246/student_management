@@ -23,7 +23,9 @@ export const Login=()=>
                 </div>
                 <button type="submit" className="btn-primary">Login</button>
             </form>
-            
+            <p className="link-text">
+                Don't have an account?<Link to="/register">Register here</Link>
+            </p>
         </div>
     )
 }
