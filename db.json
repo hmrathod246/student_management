@@ -1,12 +1,54 @@
 {
-    "task":[
-        {
-            "id":  "1",
-            "title":"welcome task",
-            "description":"this is your task served from json server",
-            "duedata":"202-09-31",
-            "completed":false,
-            "priority":"medium"
-        }
-    ]
+  "task": [
+    {
+      "id": "1",
+      "title": "welcome task",
+      "description": "this is your task served from json server",
+      "duedate": "202-09-31",
+      "completed": false,
+      "priority": "medium"
+    },
+     {
+      "id": "2",
+      "title": "welcome task2",
+      "description": "this is your task served from json server",
+      "duedate": "202-09-31",
+      "completed": false,
+      "priority": "medium"
+    },
+     {
+      "id": "3",
+      "title": "welcome task3",
+      "description": "this is your task served from json server",
+      "duedate": "202-09-31",
+      "completed": false,
+      "priority": "medium"
+    },
+     {
+      "id": "4",
+      "title": "welcome task4",
+      "description": "this is your task served from json server",
+      "duedate": "202-09-31",
+      "completed": false,
+      "priority": "medium"
+    },
+     {
+      "id": "5",
+      "title": "welcome task5",
+      "description": "this is your task served from json server",
+      "duedate": "202-09-31",
+      "completed": false,
+      "priority": "medium"
+    },
+    {
+      "id": "6",
+      "title": "welcome task6",
+      "description": "this is your task served from json server",
+      "duedate": "202-09-31",
+      "completed": false,
+      "priority": "medium"
+    }
+  ]
 }
+
+
