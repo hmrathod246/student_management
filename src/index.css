@@ -143,128 +143,115 @@ select option {
 input:focus,
 textarea:focus,
 select:focus {
-    border-color:#00d2ff;
-    box-shadow: 0 0 8px rgba(0,210,255,0.3);
+  border-color: #00d2ff;
+  box-shadow: 0 0 8px rgba(0, 210, 255, 0.3);
 }
 input::placeholder,
-textarea::placeholder{
-    color:#b3b3b3;
+textarea::placeholder {
+  color: #b3b3b3;
 }
 /*links*/
-.link
-{
-    margin-top:15px;
-    color:#b3b3b3;
-    font-size: 0.9rem;
-
+.link {
+  margin-top: 15px;
+  color: #b3b3b3;
+  font-size: 0.9rem;
 }
-.link a{
-    color:#00d2ff;
-    font-weight: bold;
-    text-decoration: none;
-    margin-left: 5px;
-    transition: all 0.3s ease;
-
+.link a {
+  color: #00d2ff;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: all 0.3s ease;
 }
-.link a:hover{
-    color:#ffffff;
-    text-decoration: underline;
-    text-shadow: 0 0 10px #00d2ff;
+.link a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-shadow: 0 0 10px #00d2ff;
 }
 /*task list*/
-.task-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
-    gap:25px;
-    width: 100%;
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  width: 100%;
 }
-.task-card{
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    border:1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    padding:20px;
-    transition: transform 0.3s ease;
-
+.task-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease;
 }
-.task-card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-
+.task-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-.task-card.completed{
-    opacity: 0.7;
-    border-color: #00b894;
+.task-card.completed {
+  opacity: 0.7;
+  border-color: #00b894;
 }
-.task-card p{
-    color:#b3b3b3;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+.task-card p {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
 }
 /*task Meta */
-.task-meta
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8rem;
-    color:#b3b3b3;
-
+.task-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #b3b3b3;
 }
-.priority-badge{
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    text-transform: uppercase;
+.priority-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
-.priority-high{
-    background: rgba(255, 65,108,0.3);
-    color:#ff416c;
-
+.priority-high {
+  background: rgba(255, 65, 108, 0.3);
+  color: #ff416c;
 }
-.priority-medium{
-    background: rgba(255,206,86,0.3);
-    color:#ffce56;
-
+.priority-medium {
+  background: rgba(255, 206, 86, 0.3);
+  color: #ffce56;
 }
-.priority-low
-{
-    background: rgba(0,184,148,0.3);
-    color:#00b894;
-
+.priority-low {
+  background: rgba(0, 184, 148, 0.3);
+  color: #00b894;
 }
-.task-actions{
-    display:flex;
-    gap:10px;
-    margin-top: 15px;
+.task-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
 }
-.btn-icon{
-    width:35px;
-    height: 35px;
-    padding: 8px;
-    border-radius: 50%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
+.btn-icon {
+  width: 35px;
+  height: 35px;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.modal-overlay
-{
-    position:fixed;
-    inset:0;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(5px);
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
-.modal-content
-{
-    background: #1a1a2e;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 30px;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 500px;
+.modal-content {
+  background: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
 }
