@@ -10,6 +10,7 @@ export default function Dashboard() {
     fetchData();
   }, []);
   const [editTask, setEditTask] = useState();
+  const[showForm,setShowForm]=useState(false)
   const fetchData = async () => {
     try {
       const response = await fetch("http://localhost:3000/task");
@@ -61,13 +62,27 @@ export default function Dashboard() {
     console.log(editingTask);
     setEditTask(editingTask);
   };
-  const handleDeleteTask=async(id)=>{
+  const handleDeleteTask = async (id) => {
+    try {
+      await fetch(`http://localhost:3000/task/${id}`, {
+        method: "DELETE",
+      });
+      setTask(task.filter((task) => task.id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleCompleteTask=async(id)=>
+  {
+    const taskToggle=task.find((t)=>t.id===id);
+    const updatedTask={...taskToggle,completed:!taskToggle.completed};
     try{
-      await fetch(`http://localhost:3000/task/${id}`,
-        {
-          method:"DELETE"
-        })
-        setTask(task.filter((task)=>task.id!==id))
+      await fetch(`http://localhost:3000/task${id}`,{
+        method:"PUT",
+        headers:{"Content-type":"application/json"},
+        body:JSON.stringify(updatedTask),
+      })
+      setTask(task.map((task)=>(task.id===id? updatedTask:task)))
     }
     catch(error)
     {
@@ -76,15 +91,27 @@ export default function Dashboard() {
   }
   return (
     <div>
-      <Navbar title="Task Manager" onLogout={handleLogout} />
-      <TaskForm
+      <Navbar title="Task Manager" 
+      isFormopen={showForm}
+      onAddTaskBtnClick={()=>setShowForm(!showForm)}
+      onLogout={handleLogout} />
+
+      {showForm&&(
+        <TaskForm
         addTask={handleAddTask}
         updateTask={handleUpdateTask}
         editingTask={editTask}
       />
+      )}
+      
       <h1>My Task</h1>
 
-      <TaskList tasks={task} editingTask={editingTask} deletingTask={handleDeleteTask} />
+      <TaskList
+        tasks={task}
+        editingTask={editingTask}
+        deletingTask={handleDeleteTask}
+        handleCompleteTask={handleCompleteTask}
+      />
     </div>
   );
 }
