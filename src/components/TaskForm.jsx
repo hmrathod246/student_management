@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function TaskForm({addTask}) {
+export default function TaskForm({ addTask, editingTask, updateTask }) {
   const [formData, setFormData] = useState({
     title: "",
     desc: "",
@@ -37,7 +37,7 @@ export default function TaskForm({addTask}) {
 
     if (!formData.desc.trim()) {
       newError.desc = "Description is required";
-    } else if (formData.desc.trim().length >12) {
+    } else if (formData.desc.trim().length > 12) {
       newError.desc = "Description must be at least 12 characters";
     }
 
@@ -45,11 +45,19 @@ export default function TaskForm({addTask}) {
     return Object.keys(newError).length === 0;
   };
 
+  useEffect(() => {
+    setFormData(editingTask);
+  }, [editingTask]);
+
   const handleAdd = (e) => {
     console.log(e);
     e.preventDefault();
     if (validate()) {
-      addTask(formData);
+      if (editingTask) {
+        updateTask(formData);
+      } else {
+        addTask(formData);
+      }
     }
   };
   return (
@@ -63,7 +71,7 @@ export default function TaskForm({addTask}) {
               placeholder="Task Title"
               name="title"
               id="title"
-              value={formData.title}
+              value={formData?.title}
               onChange={handleChange}
             ></input>
             {error.title && <span className="error-msg">{error.title}</span>}
@@ -75,7 +83,7 @@ export default function TaskForm({addTask}) {
               rows="3"
               name="desc"
               id="desc"
-              value={formData.desc}
+              value={formData?.desc}
               onChange={handleChange}
             ></textarea>
             {error.desc && <span className="error-msg">{error.desc}</span>}
@@ -87,7 +95,7 @@ export default function TaskForm({addTask}) {
                 type="date"
                 name="date"
                 id="date"
-                value={formData.date}
+                value={formData?.date}
                 onChange={handleChange}
               />
               {error.date && <span className="error-msg">{error.date}</span>}
@@ -97,7 +105,7 @@ export default function TaskForm({addTask}) {
               <select
                 name="priority"
                 id="priority"
-                value={formData.priority}
+                value={formData?.priority}
                 onChange={handleChange}
               >
                 <option value="Low">Low Priority</option>
@@ -117,7 +125,7 @@ export default function TaskForm({addTask}) {
               style={{ flex: 1 }}
               onClick={handleAdd}
             >
-              Add Task
+              {editingTask ? "update" : "Add"}Task
             </button>
 
             <button

@@ -1,26 +1,10 @@
 {
   "task": [
     {
-      "id": "1",
-      "title": "welcome task",
-      "desc": "this is your task served from json server",
-      "date": "202-09-31",
-      "completed": false,
-      "priority": "medium"
-    },
-    {
-      "id": "1025",
+      "id": "63c0",
       "title": "hansa",
-      "desc": "heloo hansa",
-      "date": "2026-02-05",
-      "priority": "Medium",
-      "completed": false
-    },
-    {
-      "id": "5111",
-      "title": "hm ",
-      "desc": "hello kana",
-      "date": "2026-02-13",
+      "desc": "heloo",
+      "date": "2026-02-07",
       "priority": "Medium",
       "completed": false
     }
